@@ -2,9 +2,61 @@
 <html>
 <head>
     <title>PETrax</title>
+    <script>
+        function signUp(){
+        alert("Sign Up")
+        }
+
+        function signIn(){
+        let loginDiv = document.getElementById("Login");
+        loginDiv.innerHTML = "";
+
+        let p = document.createElement("p");
+        p.innerHTML = "Username";
+        loginDiv.appendChild(p);
+
+        let userInput = document.createElement("INPUT");
+        userInput.id = "username";
+        loginDiv.appendChild(userInput);
+
+        loginDiv.appendChild(document.createElement("BR"));
+
+        p = document.createElement("p");
+        p.innerHTML = "Password";
+        loginDiv.appendChild(p);
+
+        let passwdInput = document.createElement("INPUT");
+        passwdInput.id = "password";
+        loginDiv.appendChild(passwdInput);
+
+        loginDiv.appendChild(document.createElement("BR"));
+
+        let button = document.createElement("BUTTON");
+        button.innerHTML = "Submit";
+        button.addEventListener('click', loginSubmit);
+        loginDiv.appendChild(button);
+
+        }
+
+        function signInGoogle(){
+        alert("Sign In With Google")
+        }
+
+        function loginSubmit(event){
+        let username = document.getElementById("username");
+        let password = document.getElementById("password");
+        alert("Login Submit  " + username.value + " " + password.value);
+        }
+    </script>
 </head>
 <body>
 <h1>Welcome to PETrax!</h1>
 <p>Congratulations! Your application is up and running.</p>
+<div id = Login>
+    <button id = signUp onclick="signUp();">Sign Up</button>
+    <button id = signIn onclick="signIn();">Sign In</button>
+    <button id = signInGoogle onclick="signInGoogle();">Sign In with Google</button>
+
+</div>
 </body>
 </html>
